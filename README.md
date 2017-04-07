@@ -1,11 +1,13 @@
-# api documentation for  [progress (v1.1.8)](https://github.com/visionmedia/node-progress)  [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-progress.svg)](https://travis-ci.org/npmdoc/node-npmdoc-progress)
+# api documentation for  [progress (v2.0.0)](https://github.com/visionmedia/node-progress#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-progress.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-progress) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-progress.svg)](https://travis-ci.org/npmdoc/node-npmdoc-progress)
 #### Flexible ascii progress bar
 
 [![NPM](https://nodei.co/npm/progress.png?downloads=true)](https://www.npmjs.com/package/progress)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-progress/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-progress_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-progress/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-progress/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-progress_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-progress/build/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-progress/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-progress/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-progress/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
@@ -29,6 +31,10 @@
         {
             "name": "Jordan Scales",
             "email": "scalesjordan@gmail.com"
+        },
+        {
+            "name": "Andrew Rhyne",
+            "email": "rhyneandrew@gmail.com"
         }
     ],
     "dependencies": {},
@@ -36,31 +42,40 @@
     "devDependencies": {},
     "directories": {},
     "dist": {
-        "shasum": "e260c78f6161cdd9b0e56cc3e0a85de17c7a57be",
-        "tarball": "https://registry.npmjs.org/progress/-/progress-1.1.8.tgz"
+        "shasum": "8a1be366bf8fc23db2bd23f10c6fe920b4389d1f",
+        "tarball": "https://registry.npmjs.org/progress/-/progress-2.0.0.tgz"
     },
     "engines": {
         "node": ">=0.4.0"
     },
-    "gitHead": "6b9524c0d07df9555d20ae95c65918020c50e3e2",
-    "homepage": "https://github.com/visionmedia/node-progress",
+    "gitHead": "d84326ed9ab7720592b6bbc9c108849cd2a79908",
+    "homepage": "https://github.com/visionmedia/node-progress#readme",
     "keywords": [
         "cli",
         "progress"
     ],
-    "main": "index",
+    "license": "MIT",
+    "main": "./index.js",
     "maintainers": [
         {
-            "name": "tjholowaychuk",
-            "email": "tj@vision-media.ca"
-        },
-        {
             "name": "hallas",
-            "email": "christoffer.hallas@forsvikgroup.com"
+            "email": "christoffer.hallas@gmail.com"
         },
         {
             "name": "prezjordan",
             "email": "scalesjordan@gmail.com"
+        },
+        {
+            "name": "thebigredgeek",
+            "email": "rhyneandrew@gmail.com"
+        },
+        {
+            "name": "thejameskyle",
+            "email": "me@thejameskyle.com"
+        },
+        {
+            "name": "tjholowaychuk",
+            "email": "tj@vision-media.ca"
         }
     ],
     "name": "progress",
@@ -71,7 +86,7 @@
         "url": "git://github.com/visionmedia/node-progress.git"
     },
     "scripts": {},
-    "version": "1.1.8"
+    "version": "2.0.0"
 }
 ```
 
