@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/visionmedia/node-progress#readme"
-
-    >progress (v2.0.0)</a>
+    <a href="https://github.com/visionmedia/node-progress#readme">progress (v2.0.0)</a>
 </h1>
 <h4>Flexible ascii progress bar</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.progress">module progress</a><ol>
 
@@ -165,14 +158,14 @@
     <li>description and source-code<pre class="apidocCodePre">function ProgressBar(fmt, options) {
   this.stream = options.stream || process.stderr;
 
-  if (typeof(options) == &#x27;number&#x27;) {
+  if (typeof(options) == 'number') {
     var total = options;
     options = {};
     options.total = total;
   } else {
     options = options || {};
-    if (&#x27;string&#x27; != typeof fmt) throw new Error(&#x27;format required&#x27;);
-    if (&#x27;number&#x27; != typeof options.total) throw new Error(&#x27;total required&#x27;);
+    if ('string' != typeof fmt) throw new Error('format required');
+    if ('number' != typeof options.total) throw new Error('total required');
   }
 
   this.fmt = fmt;
@@ -181,14 +174,14 @@
   this.width = options.width || this.total;
   this.clear = options.clear
   this.chars = {
-    complete   : options.complete || &#x27;=&#x27;,
-    incomplete : options.incomplete || &#x27;-&#x27;,
-    head       : options.head || (options.complete || &#x27;=&#x27;)
+    complete   : options.complete || '=',
+    incomplete : options.incomplete || '-',
+    head       : options.head || (options.complete || '=')
   };
   this.renderThrottle = options.renderThrottle !== 0 ? (options.renderThrottle || 16) : 0;
   this.callback = options.callback || function () {};
   this.tokens = {};
-  this.lastDraw = &#x27;&#x27;;
+  this.lastDraw = '';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -205,14 +198,14 @@
     <li>description and source-code<pre class="apidocCodePre">function ProgressBar(fmt, options) {
   this.stream = options.stream || process.stderr;
 
-  if (typeof(options) == &#x27;number&#x27;) {
+  if (typeof(options) == 'number') {
     var total = options;
     options = {};
     options.total = total;
   } else {
     options = options || {};
-    if (&#x27;string&#x27; != typeof fmt) throw new Error(&#x27;format required&#x27;);
-    if (&#x27;number&#x27; != typeof options.total) throw new Error(&#x27;total required&#x27;);
+    if ('string' != typeof fmt) throw new Error('format required');
+    if ('number' != typeof options.total) throw new Error('total required');
   }
 
   this.fmt = fmt;
@@ -221,14 +214,14 @@
   this.width = options.width || this.total;
   this.clear = options.clear
   this.chars = {
-    complete   : options.complete || &#x27;=&#x27;,
-    incomplete : options.incomplete || &#x27;-&#x27;,
-    head       : options.head || (options.complete || &#x27;=&#x27;)
+    complete   : options.complete || '=',
+    incomplete : options.incomplete || '-',
+    head       : options.head || (options.complete || '=')
   };
   this.renderThrottle = options.renderThrottle !== 0 ? (options.renderThrottle || 16) : 0;
   this.callback = options.callback || function () {};
   this.tokens = {};
-  this.lastDraw = &#x27;&#x27;;
+  this.lastDraw = '';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -252,14 +245,14 @@
     <li>description and source-code<pre class="apidocCodePre">function ProgressBar(fmt, options) {
   this.stream = options.stream || process.stderr;
 
-  if (typeof(options) == &#x27;number&#x27;) {
+  if (typeof(options) == 'number') {
     var total = options;
     options = {};
     options.total = total;
   } else {
     options = options || {};
-    if (&#x27;string&#x27; != typeof fmt) throw new Error(&#x27;format required&#x27;);
-    if (&#x27;number&#x27; != typeof options.total) throw new Error(&#x27;total required&#x27;);
+    if ('string' != typeof fmt) throw new Error('format required');
+    if ('number' != typeof options.total) throw new Error('total required');
   }
 
   this.fmt = fmt;
@@ -268,14 +261,14 @@
   this.width = options.width || this.total;
   this.clear = options.clear
   this.chars = {
-    complete   : options.complete || &#x27;=&#x27;,
-    incomplete : options.incomplete || &#x27;-&#x27;,
-    head       : options.head || (options.complete || &#x27;=&#x27;)
+    complete   : options.complete || '=',
+    incomplete : options.incomplete || '-',
+    head       : options.head || (options.complete || '=')
   };
   this.renderThrottle = options.renderThrottle !== 0 ? (options.renderThrottle || 16) : 0;
   this.callback = options.callback || function () {};
   this.tokens = {};
-  this.lastDraw = &#x27;&#x27;;
+  this.lastDraw = '';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -302,20 +295,20 @@
   // write the message text
   this.stream.write(message);
   // terminate the line after writing the message
-  this.stream.write(&#x27;\n&#x27;);
+  this.stream.write('\n');
   // re-display the progress bar with its lastDraw
   this.stream.write(this.lastDraw);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-var bar = new ProgressBar(&#x27;:bar :current/:total&#x27;, { total: 10 });
+var bar = new ProgressBar(':bar :current/:total', { total: 10 });
 var timer = setInterval(function () {
   bar.tick();
   if (bar.complete) {
     clearInterval(timer);
   } else if (bar.curr === 5) {
-      bar.<span class="apidocCodeKeywordSpan">interrupt</span>(&#x27;this message appears above the progress bar\ncurrent progress
- is &#x27; + bar.curr + &#x27;/&#x27; + bar.total);
+      bar.<span class="apidocCodeKeywordSpan">interrupt</span>('this message appears above the progress bar\ncurrent progress
+ is ' + bar.curr + '/' + bar.total);
   }
 }, 1000);
 ```
@@ -354,36 +347,36 @@ You can see more examples in the `examples` folder.
 
 <span class="apidocCodeCommentSpan">  /* populate the bar template with percentages and timestamps */
 </span>  var str = this.fmt
-    .replace(&#x27;:current&#x27;, this.curr)
-    .replace(&#x27;:total&#x27;, this.total)
-    .replace(&#x27;:elapsed&#x27;, isNaN(elapsed) ? &#x27;0.0&#x27; : (elapsed / 1000).toFixed(1))
-    .replace(&#x27;:eta&#x27;, (isNaN(eta) || !isFinite(eta)) ? &#x27;0.0&#x27; : (eta / 1000)
+    .replace(':current', this.curr)
+    .replace(':total', this.total)
+    .replace(':elapsed', isNaN(elapsed) ? '0.0' : (elapsed / 1000).toFixed(1))
+    .replace(':eta', (isNaN(eta) || !isFinite(eta)) ? '0.0' : (eta / 1000)
       .toFixed(1))
-    .replace(&#x27;:percent&#x27;, percent.toFixed(0) + &#x27;%&#x27;)
-    .replace(&#x27;:rate&#x27;, Math.round(rate));
+    .replace(':percent', percent.toFixed(0) + '%')
+    .replace(':rate', Math.round(rate));
 
   /* compute the available space (non-zero) for the bar */
-  var availableSpace = Math.max(0, this.stream.columns - str.replace(&#x27;:bar&#x27;, &#x27;&#x27;).length);
-  if(availableSpace &#x26;&#x26; process.platform === &#x27;win32&#x27;){
+  var availableSpace = Math.max(0, this.stream.columns - str.replace(':bar', '').length);
+  if(availableSpace &amp;&amp; process.platform === 'win32'){
     availableSpace = availableSpace - 1;
   }
 
   var width = Math.min(this.width, availableSpace);
 
-  /* TODO: the following assumes the user has one &#x27;:bar&#x27; token */
+  /* TODO: the following assumes the user has one ':bar' token */
   completeLength = Math.round(width * ratio);
   complete = Array(Math.max(0, completeLength + 1)).join(this.chars.complete);
   incomplete = Array(Math.max(0, width - completeLength + 1)).join(this.chars.incomplete);
 
   /* add head to the complete string */
-  if(completeLength &#x3e; 0)
+  if(completeLength &gt; 0)
     complete = complete.slice(0, -1) + this.chars.head;
 
   /* fill in the actual progress bar */
-  str = str.replace(&#x27;:bar&#x27;, complete + incomplete);
+  str = str.replace(':bar', complete + incomplete);
 
   /* replace the extra tokens */
-  if (this.tokens) for (var key in this.tokens) str = str.replace(&#x27;:&#x27; + key, this.tokens[key]);
+  if (this.tokens) for (var key in this.tokens) str = str.replace(':' + key, this.tokens[key]);
 
   if (this.lastDraw !== str) {
     this.stream.cursorTo(0);
@@ -411,7 +404,7 @@ You can see more examples in the `examples` folder.
       this.stream.cursorTo(0);
     }
   } else {
-    this.stream.write(&#x27;\n&#x27;);
+    this.stream.write('\n');
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -431,7 +424,7 @@ You can see more examples in the `examples` folder.
     len = len || 1;
 
   // swap tokens
-  if (&#x27;object&#x27; == typeof len) tokens = len, len = 1;
+  if ('object' == typeof len) tokens = len, len = 1;
   if (tokens) this.tokens = tokens;
 
   // start time for eta
@@ -445,7 +438,7 @@ You can see more examples in the `examples` folder.
   }
 
   // progress complete
-  if (this.curr &#x3e;= this.total) {
+  if (this.curr &gt;= this.total) {
     if (this.renderThrottleTimeout) this.render();
     this.complete = true;
     this.terminate();
@@ -457,13 +450,13 @@ You can see more examples in the `examples` folder.
 be considered complete. After that all we need to do is `tick()` appropriately.
 
 ```javascript
-var ProgressBar = require(&#x27;progress&#x27;);
+var ProgressBar = require('progress');
 
-var bar = new ProgressBar(&#x27;:bar&#x27;, { total: 10 });
+var bar = new ProgressBar(':bar', { total: 10 });
 var timer = setInterval(function () {
   bar.<span class="apidocCodeKeywordSpan">tick</span>();
   if (bar.complete) {
-    console.log(&#x27;\ncomplete\n&#x27;);
+    console.log('\ncomplete\n');
     clearInterval(timer);
   }
 }, 100);
@@ -498,3 +491,4 @@ var timer = setInterval(function () {
     ]
 </div>
 </div>
+</body></html>

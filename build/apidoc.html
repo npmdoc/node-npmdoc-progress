@@ -61,12 +61,434 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.progress">module progress</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.progress.progress">
+            function <span class="apidocSignatureSpan"></span>progress
+            <span class="apidocSignatureSpan">(fmt, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.progress.node_progress">
+            function <span class="apidocSignatureSpan">progress.</span>node_progress
+            <span class="apidocSignatureSpan">(fmt, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">progress.</span>node_progress.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.progress.node_progress">module progress.node_progress</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.progress.node_progress.node_progress">
+            function <span class="apidocSignatureSpan">progress.</span>node_progress
+            <span class="apidocSignatureSpan">(fmt, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.progress.node_progress.prototype">module progress.node_progress.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.progress.node_progress.prototype.interrupt">
+            function <span class="apidocSignatureSpan">progress.node_progress.prototype.</span>interrupt
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.progress.node_progress.prototype.render">
+            function <span class="apidocSignatureSpan">progress.node_progress.prototype.</span>render
+            <span class="apidocSignatureSpan">(tokens)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.progress.node_progress.prototype.terminate">
+            function <span class="apidocSignatureSpan">progress.node_progress.prototype.</span>terminate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.progress.node_progress.prototype.tick">
+            function <span class="apidocSignatureSpan">progress.node_progress.prototype.</span>tick
+            <span class="apidocSignatureSpan">(len, tokens)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.progress.node_progress.prototype.update">
+            function <span class="apidocSignatureSpan">progress.node_progress.prototype.</span>update
+            <span class="apidocSignatureSpan">(ratio, tokens)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.progress" id="apidoc.module.progress">module progress</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.progress.progress" id="apidoc.element.progress.progress">
+        function <span class="apidocSignatureSpan"></span>progress
+        <span class="apidocSignatureSpan">(fmt, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ProgressBar(fmt, options) {
+  this.stream = options.stream || process.stderr;
+
+  if (typeof(options) == &#x27;number&#x27;) {
+    var total = options;
+    options = {};
+    options.total = total;
+  } else {
+    options = options || {};
+    if (&#x27;string&#x27; != typeof fmt) throw new Error(&#x27;format required&#x27;);
+    if (&#x27;number&#x27; != typeof options.total) throw new Error(&#x27;total required&#x27;);
+  }
+
+  this.fmt = fmt;
+  this.curr = options.curr || 0;
+  this.total = options.total;
+  this.width = options.width || this.total;
+  this.clear = options.clear
+  this.chars = {
+    complete   : options.complete || &#x27;=&#x27;,
+    incomplete : options.incomplete || &#x27;-&#x27;,
+    head       : options.head || (options.complete || &#x27;=&#x27;)
+  };
+  this.renderThrottle = options.renderThrottle !== 0 ? (options.renderThrottle || 16) : 0;
+  this.callback = options.callback || function () {};
+  this.tokens = {};
+  this.lastDraw = &#x27;&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.progress.node_progress" id="apidoc.element.progress.node_progress">
+        function <span class="apidocSignatureSpan">progress.</span>node_progress
+        <span class="apidocSignatureSpan">(fmt, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ProgressBar(fmt, options) {
+  this.stream = options.stream || process.stderr;
+
+  if (typeof(options) == &#x27;number&#x27;) {
+    var total = options;
+    options = {};
+    options.total = total;
+  } else {
+    options = options || {};
+    if (&#x27;string&#x27; != typeof fmt) throw new Error(&#x27;format required&#x27;);
+    if (&#x27;number&#x27; != typeof options.total) throw new Error(&#x27;total required&#x27;);
+  }
+
+  this.fmt = fmt;
+  this.curr = options.curr || 0;
+  this.total = options.total;
+  this.width = options.width || this.total;
+  this.clear = options.clear
+  this.chars = {
+    complete   : options.complete || &#x27;=&#x27;,
+    incomplete : options.incomplete || &#x27;-&#x27;,
+    head       : options.head || (options.complete || &#x27;=&#x27;)
+  };
+  this.renderThrottle = options.renderThrottle !== 0 ? (options.renderThrottle || 16) : 0;
+  this.callback = options.callback || function () {};
+  this.tokens = {};
+  this.lastDraw = &#x27;&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.progress.node_progress" id="apidoc.module.progress.node_progress">module progress.node_progress</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.progress.node_progress.node_progress" id="apidoc.element.progress.node_progress.node_progress">
+        function <span class="apidocSignatureSpan">progress.</span>node_progress
+        <span class="apidocSignatureSpan">(fmt, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ProgressBar(fmt, options) {
+  this.stream = options.stream || process.stderr;
+
+  if (typeof(options) == &#x27;number&#x27;) {
+    var total = options;
+    options = {};
+    options.total = total;
+  } else {
+    options = options || {};
+    if (&#x27;string&#x27; != typeof fmt) throw new Error(&#x27;format required&#x27;);
+    if (&#x27;number&#x27; != typeof options.total) throw new Error(&#x27;total required&#x27;);
+  }
+
+  this.fmt = fmt;
+  this.curr = options.curr || 0;
+  this.total = options.total;
+  this.width = options.width || this.total;
+  this.clear = options.clear
+  this.chars = {
+    complete   : options.complete || &#x27;=&#x27;,
+    incomplete : options.incomplete || &#x27;-&#x27;,
+    head       : options.head || (options.complete || &#x27;=&#x27;)
+  };
+  this.renderThrottle = options.renderThrottle !== 0 ? (options.renderThrottle || 16) : 0;
+  this.callback = options.callback || function () {};
+  this.tokens = {};
+  this.lastDraw = &#x27;&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.progress.node_progress.prototype" id="apidoc.module.progress.node_progress.prototype">module progress.node_progress.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.progress.node_progress.prototype.interrupt" id="apidoc.element.progress.node_progress.prototype.interrupt">
+        function <span class="apidocSignatureSpan">progress.node_progress.prototype.</span>interrupt
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">interrupt = function (message) {
+  // clear the current line
+  this.stream.clearLine();
+  // move the cursor to the start of the line
+  this.stream.cursorTo(0);
+  // write the message text
+  this.stream.write(message);
+  // terminate the line after writing the message
+  this.stream.write(&#x27;\n&#x27;);
+  // re-display the progress bar with its lastDraw
+  this.stream.write(this.lastDraw);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var bar = new ProgressBar(&#x27;:bar :current/:total&#x27;, { total: 10 });
+var timer = setInterval(function () {
+  bar.tick();
+  if (bar.complete) {
+    clearInterval(timer);
+  } else if (bar.curr === 5) {
+      bar.<span class="apidocCodeKeywordSpan">interrupt</span>(&#x27;this message appears above the progress bar\ncurrent progress
+ is &#x27; + bar.curr + &#x27;/&#x27; + bar.total);
+  }
+}, 1000);
+```
+
+You can see more examples in the `examples` folder.
+
+## License
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.progress.node_progress.prototype.render" id="apidoc.element.progress.node_progress.prototype.render">
+        function <span class="apidocSignatureSpan">progress.node_progress.prototype.</span>render
+        <span class="apidocSignatureSpan">(tokens)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">render = function (tokens) {
+  clearTimeout(this.renderThrottleTimeout);
+  this.renderThrottleTimeout = null;
+
+  if (tokens) this.tokens = tokens;
+
+  if (!this.stream.isTTY) return;
+
+  var ratio = this.curr / this.total;
+  ratio = Math.min(Math.max(ratio, 0), 1);
+
+  var percent = ratio * 100;
+  var incomplete, complete, completeLength;
+  var elapsed = new Date - this.start;
+  var eta = (percent == 100) ? 0 : elapsed * (this.total / this.curr - 1);
+  var rate = this.curr / (elapsed / 1000);
+
+<span class="apidocCodeCommentSpan">  /* populate the bar template with percentages and timestamps */
+</span>  var str = this.fmt
+    .replace(&#x27;:current&#x27;, this.curr)
+    .replace(&#x27;:total&#x27;, this.total)
+    .replace(&#x27;:elapsed&#x27;, isNaN(elapsed) ? &#x27;0.0&#x27; : (elapsed / 1000).toFixed(1))
+    .replace(&#x27;:eta&#x27;, (isNaN(eta) || !isFinite(eta)) ? &#x27;0.0&#x27; : (eta / 1000)
+      .toFixed(1))
+    .replace(&#x27;:percent&#x27;, percent.toFixed(0) + &#x27;%&#x27;)
+    .replace(&#x27;:rate&#x27;, Math.round(rate));
+
+  /* compute the available space (non-zero) for the bar */
+  var availableSpace = Math.max(0, this.stream.columns - str.replace(&#x27;:bar&#x27;, &#x27;&#x27;).length);
+  if(availableSpace &#x26;&#x26; process.platform === &#x27;win32&#x27;){
+    availableSpace = availableSpace - 1;
+  }
+
+  var width = Math.min(this.width, availableSpace);
+
+  /* TODO: the following assumes the user has one &#x27;:bar&#x27; token */
+  completeLength = Math.round(width * ratio);
+  complete = Array(Math.max(0, completeLength + 1)).join(this.chars.complete);
+  incomplete = Array(Math.max(0, width - completeLength + 1)).join(this.chars.incomplete);
+
+  /* add head to the complete string */
+  if(completeLength &#x3e; 0)
+    complete = complete.slice(0, -1) + this.chars.head;
+
+  /* fill in the actual progress bar */
+  str = str.replace(&#x27;:bar&#x27;, complete + incomplete);
+
+  /* replace the extra tokens */
+  if (this.tokens) for (var key in this.tokens) str = str.replace(&#x27;:&#x27; + key, this.tokens[key]);
+
+  if (this.lastDraw !== str) {
+    this.stream.cursorTo(0);
+    this.stream.write(str);
+    this.stream.clearLine(1);
+    this.lastDraw = str;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.progress.node_progress.prototype.terminate" id="apidoc.element.progress.node_progress.prototype.terminate">
+        function <span class="apidocSignatureSpan">progress.node_progress.prototype.</span>terminate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">terminate = function () {
+  if (this.clear) {
+    if (this.stream.clearLine) {
+      this.stream.clearLine();
+      this.stream.cursorTo(0);
+    }
+  } else {
+    this.stream.write(&#x27;\n&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.progress.node_progress.prototype.tick" id="apidoc.element.progress.node_progress.prototype.tick">
+        function <span class="apidocSignatureSpan">progress.node_progress.prototype.</span>tick
+        <span class="apidocSignatureSpan">(len, tokens)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tick = function (len, tokens){
+  if (len !== 0)
+    len = len || 1;
+
+  // swap tokens
+  if (&#x27;object&#x27; == typeof len) tokens = len, len = 1;
+  if (tokens) this.tokens = tokens;
+
+  // start time for eta
+  if (0 == this.curr) this.start = new Date;
+
+  this.curr += len
+
+  // schedule render
+  if (!this.renderThrottleTimeout) {
+    this.renderThrottleTimeout = setTimeout(this.render.bind(this), this.renderThrottle);
+  }
+
+  // progress complete
+  if (this.curr &#x3e;= this.total) {
+    if (this.renderThrottleTimeout) this.render();
+    this.complete = true;
+    this.terminate();
+    this.callback(this);
+    return;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+be considered complete. After that all we need to do is `tick()` appropriately.
+
+```javascript
+var ProgressBar = require(&#x27;progress&#x27;);
+
+var bar = new ProgressBar(&#x27;:bar&#x27;, { total: 10 });
+var timer = setInterval(function () {
+  bar.<span class="apidocCodeKeywordSpan">tick</span>();
+  if (bar.complete) {
+    console.log(&#x27;\ncomplete\n&#x27;);
+    clearInterval(timer);
+  }
+}, 100);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.progress.node_progress.prototype.update" id="apidoc.element.progress.node_progress.prototype.update">
+        function <span class="apidocSignatureSpan">progress.node_progress.prototype.</span>update
+        <span class="apidocSignatureSpan">(ratio, tokens)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function (ratio, tokens) {
+  var goal = Math.floor(ratio * this.total);
+  var delta = goal - this.curr;
+
+  this.tick(delta, tokens);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 
