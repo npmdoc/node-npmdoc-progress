@@ -1,9 +1,14 @@
-# api documentation for  [progress (v2.0.0)](https://github.com/visionmedia/node-progress#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-progress.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-progress) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-progress.svg)](https://travis-ci.org/npmdoc/node-npmdoc-progress)
+# npmdoc-progress
+
+#### api documentation for  [progress (v2.0.0)](https://github.com/visionmedia/node-progress#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-progress.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-progress) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-progress.svg)](https://travis-ci.org/npmdoc/node-npmdoc-progress)
+
 #### Flexible ascii progress bar
 
-[![NPM](https://nodei.co/npm/progress.png?downloads=true)](https://www.npmjs.com/package/progress)
+[![NPM](https://nodei.co/npm/progress.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/progress)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-progress/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-progress_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-progress/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-progress/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-progress/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-progress/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-progress/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-progress/build/screenCapture.npmPackageListing.svg)
 
@@ -17,24 +22,20 @@
 
 {
     "author": {
-        "name": "TJ Holowaychuk",
-        "email": "tj@vision-media.ca"
+        "name": "TJ Holowaychuk"
     },
     "bugs": {
         "url": "https://github.com/visionmedia/node-progress/issues"
     },
     "contributors": [
         {
-            "name": "Christoffer Hallas",
-            "email": "christoffer.hallas@gmail.com"
+            "name": "Christoffer Hallas"
         },
         {
-            "name": "Jordan Scales",
-            "email": "scalesjordan@gmail.com"
+            "name": "Jordan Scales"
         },
         {
-            "name": "Andrew Rhyne",
-            "email": "rhyneandrew@gmail.com"
+            "name": "Andrew Rhyne"
         }
     ],
     "dependencies": {},
@@ -58,47 +59,32 @@
     "main": "./index.js",
     "maintainers": [
         {
-            "name": "hallas",
-            "email": "christoffer.hallas@gmail.com"
+            "name": "hallas"
         },
         {
-            "name": "prezjordan",
-            "email": "scalesjordan@gmail.com"
+            "name": "prezjordan"
         },
         {
-            "name": "thebigredgeek",
-            "email": "rhyneandrew@gmail.com"
+            "name": "thebigredgeek"
         },
         {
-            "name": "thejameskyle",
-            "email": "me@thejameskyle.com"
+            "name": "thejameskyle"
         },
         {
-            "name": "tjholowaychuk",
-            "email": "tj@vision-media.ca"
+            "name": "tjholowaychuk"
         }
     ],
     "name": "progress",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git://github.com/visionmedia/node-progress.git"
     },
     "scripts": {},
-    "version": "2.0.0"
+    "version": "2.0.0",
+    "bin": {}
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module progress](#apidoc.module.progress)
-
-
-
-# <a name="apidoc.module.progress"></a>[module progress](#apidoc.module.progress)
 
 
 
